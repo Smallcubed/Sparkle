@@ -11,6 +11,10 @@
 
 #import "SUConstants.h"
 
-#define SULocalizedString(key, comment) NSLocalizedStringFromTableInBundle(key, @"Sparkle", (NSBundle * _Nonnull)([NSBundle bundleWithIdentifier:SUBundleIdentifier] ? [NSBundle bundleWithIdentifier:SUBundleIdentifier] : [NSBundle mainBundle]), comment)
+#define SULocalizedString(key, comment) \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wformat-non-iso\"") \
+NSLocalizedStringFromTableInBundle((key), @"Sparkle", ((NSBundle * _Nonnull)([NSBundle bundleWithIdentifier:SUBundleIdentifier] ? [NSBundle bundleWithIdentifier:SUBundleIdentifier] : [NSBundle mainBundle])), comment) \
+_Pragma("clang diagnostic pop")
 
 #endif /* SULocalizations_h */
