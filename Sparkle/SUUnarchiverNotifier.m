@@ -28,9 +28,9 @@
 - (instancetype)initWithCompletionBlock:(void (^)(NSError * _Nullable))completionBlock progressBlock:(void (^ _Nullable)(double))progressBlock
 {
     self = [super init];
+    _completionBlock = [completionBlock copy];
+    _progressBlock = [progressBlock copy];
     if (self != nil) {
-        _completionBlock = [completionBlock copy];
-        _progressBlock = [progressBlock copy];
     }
     return self;
 }

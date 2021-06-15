@@ -58,9 +58,9 @@ static NSString *const SUUpdatePermissionPromptTouchBarIndentifier = @"" SPARKLE
 - (instancetype)initWithHost:(SUHost *)aHost systemProfile:(NSArray *)profile reply:(void (^)(SUUpdatePermissionResponse *))reply
 {
     self = [super initWithWindowNibName:@"SUUpdatePermissionPrompt"];
+    _reply = reply;
 	if (self)
 	{
-        _reply = reply;
         host = aHost;
         self.isShowingMoreInfo = NO;
         self.shouldSendProfile = [self shouldAskAboutProfile];
@@ -85,6 +85,9 @@ static NSString *const SUUpdatePermissionPromptTouchBarIndentifier = @"" SPARKLE
         if (window) {
             [NSApp runModalForWindow:window];
         }
+    }
+    else {
+        reply(nil);
     }
 }
 

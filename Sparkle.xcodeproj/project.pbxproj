@@ -2808,6 +2808,7 @@
 			baseConfigurationReference = FA1941CA0D94A70100DD942E /* ConfigFrameworkDebug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_COMPLETION_HANDLER_MISUSE = NO;
 				DEFINES_MODULE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2819,6 +2820,7 @@
 			baseConfigurationReference = FA1941D50D94A70100DD942E /* ConfigFrameworkRelease.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_COMPLETION_HANDLER_MISUSE = NO;
 				DEFINES_MODULE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 			};
